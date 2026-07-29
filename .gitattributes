@@ -1,0 +1,59 @@
+# ============================================
+# Лингвистические правила для GitHub
+# Показываем: C#, JavaScript (React), CSS
+# ============================================
+
+# --- Бекенд: C# ---
+*.cs linguist-language=C#
+*.csproj linguist-language=C#
+*.sln linguist-language=C#
+*.cshtml linguist-language=C#
+*.razor linguist-language=C#
+Backend/** linguist-detectable=true
+
+# --- Фронтенд: JavaScript/React ---
+*.js linguist-language=JavaScript
+*.jsx linguist-language=JavaScript
+*.ts linguist-language=JavaScript
+*.tsx linguist-language=JavaScript
+*.mjs linguist-language=JavaScript
+*.cjs linguist-language=JavaScript
+
+# --- Стили: CSS ---
+*.css linguist-language=CSS
+*.scss linguist-language=CSS
+*.less linguist-language=CSS
+*.module.css linguist-language=CSS
+
+# --- Исключаем сгенерированное и вендорное ---
+**/bin/** linguist-generated=true
+**/obj/** linguist-generated=true
+**/node_modules/** linguist-generated=true
+**/dist/** linguist-generated=true
+**/build/** linguist-generated=true
+*.generated.* linguist-generated=true
+*.Designer.cs linguist-generated=true
+package-lock.json linguist-generated=true
+yarn.lock linguist-generated=true
+
+# --- Конфиги, JSON и Markdown НЕ показываем как языки ---
+*.json linguist-detectable=false
+*.md linguist-detectable=false
+*.yml linguist-detectable=false
+*.yaml linguist-detectable=false
+*.config linguist-detectable=false
+.gitignore linguist-detectable=false
+.gitattributes linguist-detectable=false
+
+# --- Нормализация окончаний строк ---
+* text=auto
+*.cs text eol=crlf
+*.csproj text eol=crlf
+*.sln text eol=crlf
+*.json text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.css text eol=lf
+*.md text eol=crlf
