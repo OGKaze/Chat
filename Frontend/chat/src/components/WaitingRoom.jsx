@@ -1,15 +1,15 @@
 import React, { useState } from 'react'; 
 import {Button, Heading, Input, Text} from "@chakra-ui/react";
 
-export const WaitingRoom = ({joinChat}) =>{
+export const WaitingRoom = ({JoinChat}) =>{
 
-    const [UserName, setUsername] = useState();
-    const [ChatRoom,setChatRoom] = useState();
+    const [userName, setUsername] = useState();
+    const [chatRoom,setChatRoom] = useState();
 
 
     const onSubmit = (e) => {
         e.preventDefault();
-        joinChat(UserName, ChatRoom);
+        JoinChat(userName, chatRoom);
     }
 
 
@@ -17,12 +17,12 @@ export const WaitingRoom = ({joinChat}) =>{
     <form onSubmit = {onSubmit} className="max-w-sm w-full bg-white p-8 rounded shadow-lg">
         <Heading> Онлайн чат</Heading>
         <div className="mb-4">
-            <Text fontsize={"sm"}>Имя пользователя</Text>
-            <Input onChange={(e) => setUsername(e.target.value)} name="UserName" placeholder="Введите ваше имя"/>
+            <Text fontSize={"sm"}>Имя пользователя</Text>
+            <Input onChange={(e) => setUsername(e.target.value)} name="userName" placeholder="Введите ваше имя"/>
         </div>
          <div className="mb-4">
-            <Text fontsize={"sm"}>Название чата</Text>
-            <Input Change={(e) => setChatRoom(e.target.value)} name="ChatRoom" placeholder="Введите Название чата"/>
+            <Text fontSize={"sm"}>Название чата</Text>
+            <Input onChange={(e) => setChatRoom(e.target.value)} name="chatRoom" placeholder="Введите Название чата"/>
         </div>
         <Button type="submit" colorScheme="blue">Присоединиться</Button>
     </form>

@@ -2,6 +2,12 @@ using Chat.Hubs;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddStackExchangeRedisCache(options =>
+
+    var connection = builder.Configuration.GetConnectionString("Redis");
+    options.Configuration = connection;
+});
 builder.Services.AddSignalR();
 builder.Services.AddCors(options =>
 {
@@ -16,8 +22,10 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseCors();
+
+
 app.MapHub<ChatHub>("/chat");
 
-app.UseCors();
 
 app.Run();
